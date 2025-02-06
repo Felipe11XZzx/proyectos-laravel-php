@@ -1,0 +1,17 @@
+services:
+    mysql:
+        image: mysql
+        environment:
+            - MYSQL_USER = alumno
+            - MYSQL_PASSWORD = alumno
+            - MYSQL_DATABASE = app
+            - MYSQL_ROOT_PASSWORD = root
+        ports:
+            -   23306:3306
+    phpmyadmin:
+        image: phpmyadmin
+        environment:
+            - PMA_ARBITRARY = 1
+            - PMA_HOST = mysql
+        ports:
+            - 8100:80
