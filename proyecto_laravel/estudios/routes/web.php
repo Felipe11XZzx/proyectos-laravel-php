@@ -18,7 +18,7 @@ Route::get('/main', fn() => view('main'));
 
 //Route::view('/main', 'index');
 
-Route::get ("/main", [MainController::class, "index"]);
+Route::get("/main", [MainController::class, "index"]); // index es la funcion.
 
 
 Route::get('/', function () {
@@ -29,7 +29,19 @@ Route::get('/alumnos/{numero}', function ($num) {
     return view('alumnos', ['numero' => $num]);
 })->where('numero', '[0-9]+');
 
-Route::fallback(function () {
+Route::get ('/contacto', function () {
+    return view('contacto');
+});
+
+Route::get ('/about', function () {
+    return view('about');
+});
+
+Route::get ('/noticias', function () {
+    return view('noticias');
+});
+
+/*Route::fallback(function () {
    $msj = request()->getRequestUri();
    return view("<h1>Error 404: <span style='color: red'>$msj</span></h1>");
-});
+});*/

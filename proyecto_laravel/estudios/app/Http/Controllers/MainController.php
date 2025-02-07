@@ -9,6 +9,12 @@ class MainController extends Controller
     public function index()
     {
         $n=rand(10,100);
-        return view("index", ["n"=>$n,"nombre"=>"Ana"]);
+        $nombre = "Papotico";
+
+        //return view("index", ["n"=>$n,"nombre"=>"Felipe"]);
+        // PARA PASAR VALORES A UNA LISTA.
+        return view("index", compact("n", "nombre"));
     }
+
+
 }
